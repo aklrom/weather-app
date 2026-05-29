@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo App</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+</head>
+<body class="{{ main_weather }}">
+    <h1>La Weather App</h1>
+    <form action="/weather" method="POST"><!--weather envoie les données vers la route weather POST envoie envoie de facon securisé!-->
+        <input type="text" name="city" placeholder="Entrer une ville" required>
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {% if temp %}
+        <!--<p>{{ data }}</p>!-->
+        <h2>🌆{{ city }}</h2>
+        <section class="first">
+            <div class="info">
+                <h2>Temperature °C</h2>
+                <div class="data">
+                    <img src="">
+                    <p>{{ temp }}</p>
+                </div>
+            </div>
+            <div class="info">
+                <h2>Description </h2>
+                <div class="data">
+                    <img src="https://openweathermap.org/img/wn/{{ icon }}@2x.png">
+                    <p>{{ description }}</p>
+                </div>
+            </div>
+            <div class="info">
+                <h2>Wind</h2>
+                <div class="data">
+                    <img src="">
+                    <p>{{ wind }}</p>
+                </div>
+            </div>
+            <div class="info">
+                <h2>Humidité</h2>
+                <div class="data">
+                    <img src="">
+                    <p>{{ hum }}</p>
+                </div>
+            </div>
+        </section>
+    {% endif %}    
+    {% if error %}
+        <h2 style="color: black;">{{ error }}</h2>
+    {% endif %}    
+
+</body>
+</html>

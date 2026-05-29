@@ -1,0 +1,90 @@
+body{
+    font-family:Arial;
+    text-align:center;
+    transition:0.5s;
+    margin-top: 50px;
+    color: white;
+}
+.first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 15px;
+}
+
+.first .info { 
+    margin: 0; 
+    flex: 1 1 calc(25% - 15px); 
+    min-width: 250px; 
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden;
+} 
+
+
+.info h2 { 
+    margin-bottom: 20px; 
+    padding: 10px 15px; 
+    font-size: 1.2rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    background-color: #0c1a30; 
+    color: #ffffff; 
+    border-radius: 8px;
+}
+
+.data {
+  
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+  background-color: transparent;
+  
+}
+
+.data img {
+  
+  width: 50%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.data p {
+ 
+  width: 50%;
+  margin: 0;
+  padding-left: 15px;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  font-weight: bold;
+  
+}
+
+.Clear{
+    background: linear-gradient(to right,#f7971e,#ffd200);
+}
+.Clouds{
+    background: linear-gradient(to right,#757f9a,#d7dde8);
+}
+.Rain{
+    background: linear-gradient(to right,#314755,#26a0da);
+}
+.Thunderstorm{
+    background: linear-gradient(to right,#232526,#414345);
+}
+.Snow{
+    background: linear-gradient(to right,#e6dada,#274046);
+}
+
+input{
+    padding:10px;
+}
+button{
+    padding:10px;
+    cursor:pointer;
+}

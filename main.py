@@ -19,9 +19,17 @@ def weather():
     #convertir en json
     data=response.json()
     #extraire les infos itules
-    temp=data["main"]["temp"] #temprature
-    description=data["weather"]["description"]
-    return render_template("index.html",temp=temp)   
+    try:
+        temp=data["main"]["temp"] #temprature
+        icon=data["weather"][0]["icon"]
+        hum=data["main"]["humidity"]#humidité
+        wind=data["wind"]["speed"]
+        main_weather=data["weather"][0]["main"]
+        description=data["weather"][0]["description"]
 
+        return render_template("index.html",main_weather=main_weather,data=data,temp=temp,icon=icon,description=description,city=city,hum=hum,wind=wind)   
+    except KeyError:
+        error="Ville introuvable"
+        return render_template("index.html",error=error)
 if __name__=="__main__":
     app.run(debug=True)
